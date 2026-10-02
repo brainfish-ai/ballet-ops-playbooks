@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "repo": "brainfish-ai/ballet-ops-playbooks",
+  "ref": "main",
+  "templates": [
+    {
+      "id": "daily-api-digest-slack",
+      "title": "Daily API Digest to Slack",
+      "summary": "Pull records from any JSON API, summarise them, and post a digest to Slack on a schedule.",
+      "category": "ops",
+      "tags": [
+        "scheduled",
+        "api",
+        "slack",
+        "digest",
+        "llm"
+      ],
+      "difficulty": "beginner",
+      "trigger": "Manual run, or attach a daily schedule in Studio",
+      "integrations": [
+        "slack"
+      ],
+      "mcpServers": [],
+      "secrets": [
+        "DIGEST_API_URL",
+        "DIGEST_API_TOKEN",
+        "SLACK_BOT_TOKEN",
+        "SLACK_DIGEST_CHANNEL"
+      ],
+      "agents": [
+        "digest-writer"
+      ],
+      "steps": 3,
+      "path": "templates/daily-api-digest-slack"
+    },
+    {
+      "id": "generic-webhook-relay",
+      "title": "Generic Webhook Relay",
+      "summary": "Verify any signed incoming webhook, reshape it, and forward it to a downstream service with retries.",
+      "category": "ops",
+      "tags": [
+        "webhook",
+        "relay",
+        "hmac",
+        "retries",
+        "no-llm"
+      ],
+      "difficulty": "beginner",
+      "trigger": "Generic HMAC webhook",
+      "integrations": [],
+      "mcpServers": [],
+      "secrets": [
+        "INBOUND_HMAC_SECRET",
+        "RELAY_TARGET_URL",
+        "DOWNSTREAM_API_KEY"
+      ],
+      "agents": [],
+      "steps": 2,
+      "path": "templates/generic-webhook-relay"
+    },
+    {
+      "id": "github-issue-triage",
+      "title": "GitHub Issue Triage",
+      "summary": "Label every newly opened GitHub issue with an LLM through a signed webhook.",
+      "category": "ops",
+      "tags": [
+        "github",
+        "triage",
+        "webhook",
+        "llm",
+        "devtools"
+      ],
+      "difficulty": "intermediate",
+      "trigger": "GitHub webhook (issues)",
+      "integrations": [
+        "github"
+      ],
+      "mcpServers": [],
+      "secrets": [
+        "GITHUB_WEBHOOK_SECRET",
+        "GITHUB_TOKEN"
+      ],
+      "agents": [
+        "issue-labeler"
+      ],
+      "steps": 2,
+      "path": "templates/github-issue-triage"
+    }
+  ]
+}

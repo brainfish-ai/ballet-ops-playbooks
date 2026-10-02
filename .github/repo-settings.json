@@ -1,0 +1,13 @@
+{
+  "description": "Signed webhooks, scheduled digests and issue triage with retries and observability. One click into Ballet.",
+  "topics": [
+    "ai-agents",
+    "webhooks",
+    "github-automation",
+    "devops",
+    "scheduled-jobs",
+    "workflow-automation",
+    "playbook-templates",
+    "ballet"
+  ]
+}

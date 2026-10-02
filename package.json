@@ -1,0 +1,19 @@
+{
+  "name": "ballet-ops-playbooks",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Importable Ballet playbook templates for support, sales, ops and MCP workflows.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/validate.mjs && node scripts/build.mjs --check"
+  },
+  "dependencies": {
+    "yaml": "^2.8.3"
+  }
+}
